@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Zineddine Makhlouf · Software</title>
+  <meta name="description" content="Zineddine Makhlouf, software developer. Projects: clipcut.">
+  <style>
+    :root {
+      --bg: #fafaf7;
+      --surface: #ffffff;
+      --text: #1a1a1a;
+      --muted: #5f6368;
+      --line: #e4e2dc;
+      --accent: #e0487a;
+      --accent-soft: #fde7ee;
+      --radius: 14px;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root:not([data-theme="light"]) {
+        --bg: #0f1012;
+        --surface: #17181c;
+        --text: #f2f2f0;
+        --muted: #9aa0a6;
+        --line: #2a2c33;
+        --accent: #ff6b96;
+        --accent-soft: #2b1820;
+      }
+    }
+    :root[data-theme="dark"] {
+      --bg: #0f1012;
+      --surface: #17181c;
+      --text: #f2f2f0;
+      --muted: #9aa0a6;
+      --line: #2a2c33;
+      --accent: #ff6b96;
+      --accent-soft: #2b1820;
+    }
+
+    * { box-sizing: border-box; }
+    html { -webkit-text-size-adjust: 100%; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      line-height: 1.6;
+    }
+    .wrap {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 0 16px;
+    }
+
+    header { padding: 72px 0 48px; }
+    .eyebrow {
+      display: inline-block;
+      font-size: 0.8rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      background: var(--accent-soft);
+      padding: 6px 12px;
+      border-radius: 999px;
+      margin: 0 0 20px;
+    }
+    h1 {
+      font-size: clamp(2.2rem, 6vw, 3.4rem);
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      margin: 0 0 16px;
+    }
+    .lead {
+      font-size: 1.15rem;
+      color: var(--muted);
+      max-width: 36ch;
+      margin: 0 0 28px;
+    }
+    .links { display: flex; flex-wrap: wrap; gap: 10px; }
+    .btn {
+      text-decoration: none;
+      color: var(--text);
+      border: 1px solid var(--line);
+      background: var(--surface);
+      padding: 9px 16px;
+      border-radius: 999px;
+      font-size: 0.95rem;
+      transition: border-color .15s, color .15s;
+    }
+    .btn:hover, .btn:focus-visible { border-color: var(--accent); color: var(--accent); outline: none; }
+
+    section { padding: 40px 0; border-top: 1px solid var(--line); }
+    h2 {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--muted);
+      margin: 0 0 20px;
+      font-weight: 600;
+    }
+
+    .card {
+      display: block;
+      text-decoration: none;
+      color: inherit;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 24px;
+      transition: transform .15s, border-color .15s, box-shadow .15s;
+    }
+    .card:hover, .card:focus-visible {
+      transform: translateY(-2px);
+      border-color: var(--accent);
+      box-shadow: 0 10px 30px -18px rgba(0,0,0,.35);
+      outline: none;
+    }
+    .card-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 8px;
+    }
+    .card h3 { margin: 0; font-size: 1.4rem; letter-spacing: -0.01em; }
+    .tag {
+      font-size: 0.75rem;
+      color: var(--accent);
+      border: 1px solid currentColor;
+      padding: 2px 10px;
+      border-radius: 999px;
+    }
+    .card p { margin: 0 0 16px; color: var(--muted); }
+    .stack { display: flex; flex-wrap: wrap; gap: 8px; list-style: none; padding: 0; margin: 0; }
+    .stack li {
+      font-size: 0.8rem;
+      background: var(--bg);
+      border: 1px solid var(--line);
+      padding: 3px 10px;
+      border-radius: 6px;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    }
+    .cta { margin-top: 18px; font-size: 0.95rem; color: var(--accent); }
+
+    .about p { margin: 0 0 14px; }
+    .about .meta { color: var(--muted); font-size: 0.95rem; }
+
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 28px 0 40px;
+      color: var(--muted);
+      font-size: 0.9rem;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    footer a { color: inherit; }
+
+    @media (max-width: 480px) {
+      header { padding: 48px 0 36px; }
+      .card { padding: 20px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <header>
+      <p class="eyebrow">Software developer</p>
+      <h1>Zineddine Makhlouf</h1>
+      <p class="lead">I build small, useful tools and learn by shipping them.</p>
+      <div class="links">
+        <a class="btn" href="https://github.com/zmakhlouf39">GitHub</a>
+        <a class="btn" href="https://github.com/zmakhlouf39/clipcut">clipcut repo</a>
+      </div>
+    </header>
+
+    <section id="projects">
+      <h2>Projects</h2>
+
+      <a class="card" href="https://github.com/zmakhlouf39/clipcut">
+        <div class="card-top">
+          <h3>clipcut</h3>
+          <span class="tag">In progress</span>
+        </div>
+        <p>
+          A command-line tool that turns raw talking-head footage into a tight short-form video
+          by cutting out the silent pauses.
+        </p>
+        <ul class="stack" aria-label="Built with">
+          <li>Python</li>
+          <li>FFmpeg</li>
+          <li>pytest</li>
+        </ul>
+        <div class="cta">View on GitHub →</div>
+      </a>
+    </section>
+
+    <section id="about" class="about">
+      <h2>About</h2>
+      <p>
+        Computer science graduate from Béjaia, Algeria, focused on Python and C/C++ and on building
+        tools I actually use. I also edit video, which is where clipcut came from.
+      </p>
+      <p class="meta">Python · C · C++ · JavaScript · TypeScript · English · French · Arabic · Kabyle</p>
+    </section>
+
+    <footer>
+      <span>© 2026 Zineddine Makhlouf</span>
+      <span><a href="https://github.com/zmakhlouf39">github.com/zmakhlouf39</a></span>
+    </footer>
+  </main>
+</body>
+</html>
